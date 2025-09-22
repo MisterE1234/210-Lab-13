@@ -12,6 +12,8 @@ using namespace std;
 
 int main()
 {
+    cout << "Testing" << endl;
+   
     //declare variables:
     const int SIZE = 30; //size of the arrays
     char grade;
