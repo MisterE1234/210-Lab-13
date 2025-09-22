@@ -12,6 +12,7 @@ using namespace std;
 
 int main()
 {
+
     cout << "Testing" << endl;
    
     //declare variables:
@@ -32,12 +33,16 @@ int main()
     //read names and scores from the file into the arrays
     for (int i = 0; i < SIZE; i++)
     {
-        //The file is formatted with the name on one line and the score on the next line so that we can use getline to read the name and then read the score
-        getline(iFile,students[i]);
-        iFile >> scores[i];
-        iFile.ignore(1000, '\n'); //ignore any leftover newline characters
-    }
+        string name;
+        double score;
+        getline(iFile, name); //read the name from the file
+        
+        iFile >> score; //read score from the file
+        iFile.ignore(1000, '\n'); //ignore the newline character
 
+        students.push_back(name); //add the name to the vector
+        scores.push_back(score); //add the score to the vector
+    }
     iFile.close(); //close the input file
 
     //display the names and scores
